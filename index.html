@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Dispositivos IoT</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">IoT Control</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <!-- Puedes agregar más enlaces si quieres -->
+            </ul>
+            <div class="d-flex">
+                <a href="pooling.html" class="btn btn-secondary">Ir a App 2 (Pooling)</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Contenedor principal -->
+    <div class="container my-5">
+        <h1 class="mb-4">Agregar Registro de Dispositivo</h1>
+
+        <!-- Formulario para agregar status -->
+        <form id="statusForm" class="mb-4">
+            <div class="mb-3">
+                <label for="deviceName" class="form-label">Nombre del dispositivo</label>
+                <input type="text" class="form-control" id="deviceName" placeholder="Ej: Robot 1" required>
+            </div>
+            <div class="mb-3">
+                <label for="statusSelect" class="form-label">Status</label>
+                <select class="form-select" id="statusSelect" required>
+                    <option value="">Selecciona un status</option>
+                    <option value="adelante">adelante</option>
+                    <option value="atrás">atrás</option>
+                    <option value="detener">detener</option>
+                    <option value="adelante derecha">adelante derecha</option>
+                    <option value="adelante izquierda">adelante izquierda</option>
+                    <option value="atrás derecha">atrás derecha</option>
+                    <option value="atrás izquierda">atrás izquierda</option>
+                    <option value="giro 90 grados derecha">giro 90 grados derecha</option>
+                    <option value="giro 90 grados izquierda">giro 90 grados izquierda</option>
+                    <option value="giro 360 grados derecha">giro 360 grados derecha</option>
+                    <option value="giro 360 grados izquierda">giro 360 grados izquierda</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Registro</button>
+        </form>
+
+        <!-- Último status -->
+        <div class="mb-4">
+            <h4>Último status: <span id="lastStatus">-</span></h4>
+        </div>
+
+        <!-- Tabla de últimos 5 registros -->
+        <h2 class="mb-3">Últimos 5 registros</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Status</th>
+                    <th>IP</th>
+                    <th>Fecha y Hora (CDMX)</th>
+                </tr>
+            </thead>
+            <tbody id="recordsTable">
+                <!-- Se llenará con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+<!-- Mensajes de éxito/error -->
+<div id="alertContainer"></div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        Desarrollado por Jessel Alejandro Garrido Virgen
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app1.js"></script>
+</body>
+</html>
